@@ -56,10 +56,10 @@ cd SecretSantaGame
 **Running the Project
 To run the project, simply execute the Main.java class. The program will:**
 
-Read employee data from Employee-List.xlsx.
-Read last year's assignments from Last-Year-Santa-List.xlsx.
-Randomly assign new Secret Santa pairings while avoiding duplicates from the previous year.
-Save the new pairings to Secret-Santa-Game-Result.xlsx.
+1 .Read employee data from Employee-List.xlsx.
+2. Read last year's assignments from Last-Year-Santa-List.xlsx.
+3. Randomly assign new Secret Santa pairings while avoiding duplicates from the previous year.
+4. Save the new pairings to Secret-Santa-Game-Result.xlsx.
 
 **Error Handling**
 1. File Not Found: If the input Excel files are missing or cannot be read, an IOException is thrown.
