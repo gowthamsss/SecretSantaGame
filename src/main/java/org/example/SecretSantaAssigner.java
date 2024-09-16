@@ -1,12 +1,18 @@
 package org.example;
 
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class SecretSantaAssigner {
     private final List<Employee> employees;
     private final Map<Employee, Employee> lastYearAssignments;
+    private static final Logger LOGGER = Logger.getLogger(SecretSantaAssigner.class.getName());
 
     public SecretSantaAssigner(List<Employee> employees, Map<Employee, Employee> lastYearAssignments) {
+        if (employees == null || lastYearAssignments == null) {
+            throw new IllegalArgumentException("Employees list and last year assignments map cannot be null.");
+        }
         this.employees = employees;
         this.lastYearAssignments = lastYearAssignments;
     }
@@ -19,12 +25,17 @@ public class SecretSantaAssigner {
         Set<Employee> assigned = new HashSet<>();
 
         for (Employee giver : employees) {
-            Employee receiver = findReceiver(available, giver, assigned);
-            if (receiver == null) {
-                throw new IllegalStateException("No valid receiver found for " + giver);
+            try {
+                Employee receiver = findReceiver(available, giver, assigned);
+                if (receiver == null) {
+                    throw new IllegalStateException("No valid receiver found for " + giver);
+                }
+                assignments.put(giver, receiver);
+                assigned.add(receiver);
+            } catch (Exception e) {
+                LOGGER.log(Level.SEVERE, "Error assigning Secret Santa for " + giver.getName(), e);
+                throw e; // rethrow the exception to signal failure
             }
-            assignments.put(giver, receiver);
-            assigned.add(receiver);
         }
 
         return assignments;
@@ -41,6 +52,7 @@ public class SecretSantaAssigner {
         }
 
         if (possibleReceivers.isEmpty()) {
+            LOGGER.warning("No valid receivers found for " + giver.getName());
             return null; // No valid receiver found
         }
 

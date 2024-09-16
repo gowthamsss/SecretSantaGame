@@ -19,10 +19,21 @@ public class XLSXParser {
             rowIterator.next(); // Skip header row
             while (rowIterator.hasNext()) {
                 Row row = rowIterator.next();
-                String name = row.getCell(0).getStringCellValue();
-                String email = row.getCell(1).getStringCellValue();
-                employees.add(new Employee(name, email));
+                try {
+                    String name = row.getCell(0).getStringCellValue();
+                    String email = row.getCell(1).getStringCellValue();
+                    employees.add(new Employee(name, email));
+                } catch (Exception e) {
+                    System.err.println("Error reading row: " + e.getMessage());
+                }
             }
+        }
+        catch (IOException e) {
+            System.err.println("Error reading file: " + e.getMessage());
+            throw e; // Re-throwing to propagate the exception
+        } catch (Exception e) {
+            System.err.println("Unexpected error: " + e.getMessage());
+            throw new IOException("Unexpected error occurred", e); // Wrap and rethrow as IOException
         }
         return employees;
     }
@@ -36,16 +47,26 @@ public class XLSXParser {
             rowIterator.next();
             while (rowIterator.hasNext()) {
                 Row row = rowIterator.next();
-                String giverName = row.getCell(0).getStringCellValue();
-                String giverEmail = row.getCell(1).getStringCellValue();
-                String receiverName = row.getCell(2).getStringCellValue();
-                String receiverEmail = row.getCell(3).getStringCellValue();
+                try {
+                    String giverName = row.getCell(0).getStringCellValue();
+                    String giverEmail = row.getCell(1).getStringCellValue();
+                    String receiverName = row.getCell(2).getStringCellValue();
+                    String receiverEmail = row.getCell(3).getStringCellValue();
 
-                Employee giver = new Employee(giverName, giverEmail);
-                Employee receiver = new Employee(receiverName, receiverEmail);
+                    Employee giver = new Employee(giverName, giverEmail);
+                    Employee receiver = new Employee(receiverName, receiverEmail);
 
-                assignments.put(giver, receiver);
+                    assignments.put(giver, receiver);
+                } catch (Exception e) {
+                    System.err.println("Error reading row: " + e.getMessage());
+                }
             }
+        } catch (IOException e) {
+            System.err.println("Error reading file: " + e.getMessage());
+            throw e; // Re-throwing to propagate the exception
+        } catch (Exception e) {
+            System.err.println("Unexpected error: " + e.getMessage());
+            throw new IOException("Unexpected error occurred", e); // Wrap and rethrow as IOException
         }
         return assignments;
     }
@@ -89,7 +110,17 @@ public class XLSXParser {
             }
             try (FileOutputStream fos = new FileOutputStream(new File(filePath))) {
                 workbook.write(fos);
+            }catch (IOException e) {
+                System.err.println("Error writing file: " + e.getMessage());
+                throw e; // Re-throwing to propagate the exception
+            } catch (Exception e) {
+                System.err.println("Unexpected error: " + e.getMessage());
+                throw new IOException("Unexpected error occurred", e); // Wrap and rethrow as IOException
             }
+        }
+        catch (Exception e) {
+            System.err.println("Unexpected error while creating workbook: " + e.getMessage());
+            throw new IOException("Unexpected error occurred", e); // Wrap and rethrow as IOException
         }
     }
 }
