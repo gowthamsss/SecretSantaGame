@@ -56,7 +56,7 @@ cd SecretSantaGame
 **Running the Project
 To run the project, simply execute the Main.java class. The program will:**
 
-1 .Read employee data from Employee-List.xlsx.
+1. Read employee data from Employee-List.xlsx.
 2. Read last year's assignments from Last-Year-Santa-List.xlsx.
 3. Randomly assign new Secret Santa pairings while avoiding duplicates from the previous year.
 4. Save the new pairings to Secret-Santa-Game-Result.xlsx.
