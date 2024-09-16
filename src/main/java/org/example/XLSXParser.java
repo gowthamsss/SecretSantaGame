@@ -54,12 +54,17 @@ public class XLSXParser {
         try (Workbook workbook = new XSSFWorkbook()) {
             Sheet sheet = workbook.createSheet("Assignments");
 
+            CellStyle yellowBackgroundStyle = workbook.createCellStyle();
+            yellowBackgroundStyle.setFillForegroundColor(IndexedColors.YELLOW.getIndex());
+            yellowBackgroundStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
+
             // Create header row
             Row header = sheet.createRow(0);
             String[] headers = {"Employee_Name", "Employee_EmailID", "Secret_Child_Name", "Secret_Child_EmailID"};
             for (int i = 0; i < headers.length; i++) {
                 Cell cell = header.createCell(i);
                 cell.setCellValue(headers[i]);
+                cell.setCellStyle(yellowBackgroundStyle); // Apply the yellow background style
             }
 
             // Create data rows
