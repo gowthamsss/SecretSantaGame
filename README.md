@@ -1,7 +1,7 @@
-**Secret Santa Assignment**
+**Secret Santa Game**
 
 **Project Description**
-This Java project automates the Secret Santa gift exchange assignment by reading employee details from an Excel file and assigning each employee a random recipient (avoiding assignments from last year). 
+This Java project automates the Secret Santa gift exchange Game by reading employee details from an Excel file and assigning each employee a random recipient (avoiding assignments from last year). 
 The program ensures that no one is assigned to themselves or their last year's recipient. The results are saved in a new Excel file for easy distribution.
 
 **Features**
