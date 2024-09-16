@@ -83,6 +83,10 @@ public class XLSXParser {
                     row.createCell(3).setCellValue("N/A");
                 }
             }
+            // To Auto size the column
+            for (int i = 0; i < headers.length; i++) {
+                sheet.autoSizeColumn(i);
+            }
             try (FileOutputStream fos = new FileOutputStream(new File(filePath))) {
                 workbook.write(fos);
             }
