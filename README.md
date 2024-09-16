@@ -62,8 +62,6 @@ Randomly assign new Secret Santa pairings while avoiding duplicates from the pre
 Save the new pairings to Secret-Santa-Game-Result.xlsx.
 
 **Error Handling**
-
-**File Not Found**: If the input Excel files are missing or cannot be read, an IOException is thrown.
-
-**Invalid Assignments**: If the program is unable to find valid assignments due to constraints (such as too few participants or incompatible data), an IllegalStateException is thrown.
+1. File Not Found: If the input Excel files are missing or cannot be read, an IOException is thrown.
+2. Invalid Assignments: If the program is unable to find valid assignments due to constraints (such as too few participants or incompatible data), an IllegalStateException is thrown.
 
