@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c5941793-c1d5-4920-817f-a5c3811d18e6" name="Changes" comment="added logic for auto size the column">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Employee-List.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Employee-List.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Last-Year-Santa-List.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Last-Year-Santa-List.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/SecretSantaAssigner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/SecretSantaAssigner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/XLSXParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/XLSXParser.java" afterDir="false" />
-    </list>
+    <list default="true" id="c5941793-c1d5-4920-817f-a5c3811d18e6" name="Changes" comment="exception handling for parsing file and santa assigner" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,6 +32,9 @@
     &quot;accountId&quot;: &quot;c917fc95-d6af-472c-8714-374168196754&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/org/example/SecretSantaAssigner.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -87,7 +84,7 @@
       <updated>1726280893623</updated>
       <workItem from="1726280894754" duration="2982000" />
       <workItem from="1726401662048" duration="9016000" />
-      <workItem from="1726459611099" duration="8990000" />
+      <workItem from="1726459611099" duration="9400000" />
     </task>
     <task id="LOCAL-00001" summary="functionalities for secret santa game">
       <option name="closed" value="true" />
@@ -121,7 +118,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726464545886</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="exception handling for parsing file and santa assigner">
+      <option name="closed" value="true" />
+      <created>1726469342564</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1726469342564</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -143,6 +148,7 @@
     <MESSAGE value="sample input files" />
     <MESSAGE value="adding yellow background color for the header cells" />
     <MESSAGE value="added logic for auto size the column" />
-    <option name="LAST_COMMIT_MESSAGE" value="added logic for auto size the column" />
+    <MESSAGE value="exception handling for parsing file and santa assigner" />
+    <option name="LAST_COMMIT_MESSAGE" value="exception handling for parsing file and santa assigner" />
   </component>
 </project>
