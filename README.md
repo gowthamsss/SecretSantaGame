@@ -65,3 +65,7 @@ To run the project, simply execute the Main.java class. The program will:**
 1. File Not Found: If the input Excel files are missing or cannot be read, an IOException is thrown.
 2. Invalid Assignments: If the program is unable to find valid assignments due to constraints (such as too few participants or incompatible data), an IllegalStateException is thrown.
 
+
+**Unit Test**
+Unit Test case handled for secret santa assigner class.
+
