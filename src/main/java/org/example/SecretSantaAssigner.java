@@ -9,8 +9,16 @@ public class SecretSantaAssigner {
     private final Map<Employee, Employee> lastYearAssignments;
     private static final Logger LOGGER = Logger.getLogger(SecretSantaAssigner.class.getName());
 
+    public List<Employee> getEmployees() {
+        return employees;
+    }
+
+    public Map<Employee, Employee> getLastYearAssignments() {
+        return lastYearAssignments;
+    }
+
     public SecretSantaAssigner(List<Employee> employees, Map<Employee, Employee> lastYearAssignments) {
-        if (employees == null || lastYearAssignments == null) {
+        if (employees == null || employees.isEmpty() || lastYearAssignments == null) {
             throw new IllegalArgumentException("Employees list and last year assignments map cannot be null.");
         }
         this.employees = employees;
@@ -41,7 +49,7 @@ public class SecretSantaAssigner {
         return assignments;
     }
 
-    private Employee findReceiver(List<Employee> available, Employee giver, Set<Employee> assigned) {
+    public Employee findReceiver(List<Employee> available, Employee giver, Set<Employee> assigned) {
         List<Employee> possibleReceivers = new ArrayList<>();
         for (Employee receiver : available) {
             if (!receiver.equals(giver) &&
